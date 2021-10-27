@@ -9,7 +9,7 @@ std::string chek(std::string a, std::string b) {
     bool good = true;
     for (int i = 0; i < a.length();) {
         for (int j = 0; j < part_chek1.length();) {
-           if (a[i] != part_chek1[j]) {
+           if (a[i] != part_chek1[j] && j == part_chek1.length()) {
                good = false;
                break;
            }
@@ -31,7 +31,7 @@ std::string chek(std::string a, std::string b) {
     }
     for (int i = 0; i < b.length();) {
         for (int j = 0; j < part_chek2.length();) {
-            if (b[i] != part_chek2[j]) {
+            if (b[i] != part_chek2[j] && j == part_chek2.length()) {
                 good = false;
                 break;
             }

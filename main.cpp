@@ -2,10 +2,10 @@
 #include <string>
 
 
-std::string chek(std::string a, std::string b) {
+ std::string chek(std::string a, std::string b) {
     std::string part_chek1 = "0123456789abcdefgijklmnopqrstuvwxyzABCDEFGIJKLMNOPRSTUVWXYZ.-!#$%&'*+-/=?^_`{|}~";
     std::string part_chek2 = "0123456789abcdefgijklmnopqrstuvwxyzABCDEFGIJKLMNOPRSTUVWXYZ.-";
-    char spot = '.';
+
     bool good = true;
     for (int i = 0; i < a.length();) {
         for (int j = 0; j < part_chek1.length();) {
@@ -19,11 +19,11 @@ std::string chek(std::string a, std::string b) {
         i++;
     }
     for (int i = 0; i < a.length();) {
-        if (spot == a[i] && spot == a[i + 1]) {
+        if (a[i] == '.' && a[i + 1] == '.') {
             good = false;
             break;
         }
-        if (spot == a[0] || spot == a[i == a.length() - 1]) {
+        if (a[0] == '.' || a[i == a.length()] == '.') {
             good = false;
             break;
         }
@@ -41,11 +41,11 @@ std::string chek(std::string a, std::string b) {
         i++;
     }
     for (int i = 0; i < b.length();) {
-        if (spot == b[i] && spot == b[i + 1]) {
+        if (b[i] == '.' && b[i + 1] == '.') {
             good = false;
             break;
         }
-        if (spot == b[0] || spot == b[i == b.length() - 1]) {
+        if (b[0] == '.' || b[i == b.length()] == '.') {
             good = false;
             break;
         }
@@ -77,6 +77,11 @@ int main() {
         email_part1 += e;
         i++;
     }
-std::cout << chek(email_part1, email_part2);
+    std::cout << email_part1 << "\n" << email_part2;
+   if (email_part2.length() == 0) {
+       std::cout << "No!";
+   }else {
+       std::cout << chek(email_part1, email_part2);
+   }
 }
 

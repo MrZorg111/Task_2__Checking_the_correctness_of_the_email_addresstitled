@@ -5,16 +5,16 @@
  std::string chek(std::string a, std::string b) {
     std::string part_chek1 = "0123456789abcdefgijklmnopqrstuvwxyzABCDEFGIJKLMNOPRSTUVWXYZ.-!#$%&'*+-/=?^_`{|}~";
     std::string part_chek2 = "0123456789abcdefgijklmnopqrstuvwxyzABCDEFGIJKLMNOPRSTUVWXYZ.-";
-    int count = 0;
+    int count1 = 0, count2 = 0;
     bool good = true;
-     for (int i = 0; i < part_chek1.length();i++) {
+     for (int i = 0; i < a.length();i++) {
          for (int j = 0; j < part_chek1.length(); j++) {
              if (a[i] == part_chek1[j]) {
-                 count++;
+                 count1++;
              }
          }
      }
-     if (count < a.length()) {
+     if (count1 < a.length()) {
          good = false;
      }
     for (int i = 0; i < a.length();) {
@@ -28,14 +28,14 @@
         }
         i++;
     }
-     for (int i = 0; i < part_chek2.length();i++) {
+     for (int i = 0; i < b.length();i++) {
          for (int j = 0; j < part_chek2.length(); j++) {
              if (b[i] == part_chek2[j]) {
-                 count++;
+                 count2++;
              }
          }
      }
-     if (count < b.length()) {
+     if (count2 < b.length()) {
          good = false;
      }
     for (int i = 0; i < b.length();) {

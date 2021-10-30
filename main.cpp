@@ -5,19 +5,18 @@
  std::string chek(std::string a, std::string b) {
     std::string part_chek1 = "0123456789abcdefgijklmnopqrstuvwxyzABCDEFGIJKLMNOPRSTUVWXYZ.-!#$%&'*+-/=?^_`{|}~";
     std::string part_chek2 = "0123456789abcdefgijklmnopqrstuvwxyzABCDEFGIJKLMNOPRSTUVWXYZ.-";
-
+    int count = 0;
     bool good = true;
-    for (int i = 0; i < a.length();) {
-        for (int j = 0; j < part_chek1.length();) {
-           if (a[i] != part_chek1[j] && j == part_chek1.length()) {
-               good = false;
-               break;
-           }
-            j++;
-
-        }
-        i++;
-    }
+     for (int i = 0; i < part_chek1.length();i++) {
+         for (int j = 0; j < part_chek1.length(); j++) {
+             if (a[i] == part_chek1[j]) {
+                 count++;
+             }
+         }
+     }
+     if (count < a.length()) {
+         good = false;
+     }
     for (int i = 0; i < a.length();) {
         if (a[i] == '.' && a[i + 1] == '.') {
             good = false;
@@ -29,17 +28,16 @@
         }
         i++;
     }
-    for (int i = 0; i < b.length();) {
-        for (int j = 0; j < part_chek2.length();) {
-            if (b[i] != part_chek2[j] && j == part_chek2.length()) {
-                good = false;
-                break;
-            }
-            j++;
-
-        }
-        i++;
-    }
+     for (int i = 0; i < part_chek2.length();i++) {
+         for (int j = 0; j < part_chek2.length(); j++) {
+             if (b[i] == part_chek2[j]) {
+                 count++;
+             }
+         }
+     }
+     if (count < b.length()) {
+         good = false;
+     }
     for (int i = 0; i < b.length();) {
         if (b[i] == '.' && b[i + 1] == '.') {
             good = false;

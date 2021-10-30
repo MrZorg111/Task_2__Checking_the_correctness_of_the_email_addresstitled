@@ -7,7 +7,7 @@
     std::string part_chek2 = "0123456789abcdefgijklmnopqrstuvwxyzABCDEFGIJKLMNOPRSTUVWXYZ.-";
     int count1 = 0, count2 = 0;
     bool good = true;
-     for (int i = 0; i < a.length();i++) {
+     for (int i = 0; i < a.length(); i++) {
          for (int j = 0; j < part_chek1.length(); j++) {
              if (a[i] == part_chek1[j]) {
                  count1++;
@@ -28,7 +28,7 @@
         }
         i++;
     }
-     for (int i = 0; i < b.length();i++) {
+     for (int i = 0; i < b.length(); i++) {
          for (int j = 0; j < part_chek2.length(); j++) {
              if (b[i] == part_chek2[j]) {
                  count2++;
@@ -75,7 +75,7 @@ int main() {
         email_part1 += e;
         i++;
     }
-    std::cout << email_part1 << "\n" << email_part2;
+std::cout << email_part1 << "\t" << email_part2 << "\n";
    if (email_part2.length() == 0) {
        std::cout << "No!";
    }else {

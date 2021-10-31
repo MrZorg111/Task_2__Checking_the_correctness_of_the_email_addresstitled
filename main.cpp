@@ -28,7 +28,7 @@
         }
         i++;
     }
-    std::cout << a << "\t" << count1 << "\t" << a.length() << "\n";
+    //std::cout << a << "\t" << count1 << "\t" << a.length() << "\n"; Проверочная строка.
      for (int i = 0; i < b.length(); i++) {
          for (int j = 0; j < part_chek2.length(); j++) {
              if (b[i] == part_chek2[j]) {
@@ -50,7 +50,7 @@
         }
         i++;
     }
-     std::cout << b << "\t" << count2 << "\t" << b.length() << "\n";
+     //std::cout << b << "\t" << count2 << "\t" << b.length() << "\n"; Проверочная строка.
     if (good) {
         return "Yes!";
     } else {

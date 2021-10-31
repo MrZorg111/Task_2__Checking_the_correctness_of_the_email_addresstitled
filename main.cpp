@@ -3,8 +3,8 @@
 
 
  std::string chek(std::string a, std::string b) {
-    std::string part_chek1 = "0123456789abcdefgijklmnopqrstuvwxyzABCDEFGIJKLMNOPRSTUVWXYZ.-!#$%&'*+-/=?^_`{|}~";
-    std::string part_chek2 = "0123456789abcdefgijklmnopqrstuvwxyzABCDEFGIJKLMNOPRSTUVWXYZ.-";
+    std::string part_chek1 = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ.-!#$%&'*+/=?^_`{|}~";
+    std::string part_chek2 = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ.-";
     int count1 = 0, count2 = 0;
     bool good = true;
      for (int i = 0; i < a.length(); i++) {
@@ -14,7 +14,7 @@
              }
          }
      }
-     if (count1 < a.length()) {
+     if (count1 != a.length()) {
          good = false;
      }
     for (int i = 0; i < a.length();) {
@@ -28,6 +28,7 @@
         }
         i++;
     }
+    std::cout << a << "\t" << count1 << "\t" << a.length() << "\n";
      for (int i = 0; i < b.length(); i++) {
          for (int j = 0; j < part_chek2.length(); j++) {
              if (b[i] == part_chek2[j]) {
@@ -49,6 +50,7 @@
         }
         i++;
     }
+     std::cout << b << "\t" << count2 << "\t" << b.length() << "\n";
     if (good) {
         return "Yes!";
     } else {

@@ -77,10 +77,14 @@ int main() {
         email_part1 += e;
         i++;
     }
-std::cout << email_part1 << "\t" << email_part2 << "\n";
+//std::cout << email_part1 << "\t" << email_part2 << "\n"; Проверочная строка.
    if (email_part2.length() == 0) {
        std::cout << "No!";
-   }else {
+   }
+   if ((email_part1.length() < 1 || email_part1.length() > 64) || (email_part2.length() < 1 || email_part2.length() > 63)) {
+       std::cout << "No!";
+   }
+   else {
        std::cout << chek(email_part1, email_part2);
    }
 }

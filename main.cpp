@@ -78,10 +78,7 @@ int main() {
         i++;
     }
 //std::cout << email_part1 << "\t" << email_part2 << "\n"; Проверочная строка.
-   if (email_part2.length() == 0) {
-       std::cout << "No!";
-   }
-   if ((email_part1.length() < 1 || email_part1.length() > 64) || (email_part2.length() < 1 || email_part2.length() > 63)) {
+   if ((email_part2.length() == 0) || (email_part1.length() < 1 || email_part1.length() > 64) || (email_part2.length() < 1 || email_part2.length() > 63)) {
        std::cout << "No!";
    }
    else {
